@@ -33,6 +33,7 @@ export default function Home() {
   });
   const [formError, setFormError] = useState<string | null>(null);
   const [formSuccess, setFormSuccess] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Handle Input Changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -56,7 +57,7 @@ export default function Home() {
       return;
     }
     setFormError(null);
-
+    setIsLoading(true);
     // Send form data to Formspree
     try {
       const response = await fetch('https://formspree.io/f/mgvaqply', {
@@ -84,6 +85,7 @@ export default function Home() {
       setFormError('Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.');
       setFormSuccess(null);
     }
+    setIsLoading(false);
   };
 
   return (
@@ -443,8 +445,18 @@ export default function Home() {
                         {formSuccess}
                       </div>
                     )}
-                    <Button type="submit" className="w-full">
-                      Nachricht senden
+                    <Button type="submit" className="w-full" disabled={isLoading}>
+                      {isLoading ? (
+                        <span className="flex items-center justify-center gap-2">
+                          <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                          </svg>
+                          Wird gesendet ...
+                        </span>
+                      ) : (
+                        'Nachricht senden'
+                      )}
                     </Button>
                   </form>
                 </CardContent>
