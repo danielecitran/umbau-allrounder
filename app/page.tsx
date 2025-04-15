@@ -23,7 +23,7 @@ export default function Home() {
     }
   };
 
-  // --- NEU: Formular-States und Fehlerhandling ---
+  // Contact Formular Error Handling
   const [form, setForm] = useState({
     firstName: '',
     lastName: '',
@@ -34,22 +34,22 @@ export default function Home() {
   const [formError, setFormError] = useState<string | null>(null);
   const [formSuccess, setFormSuccess] = useState<string | null>(null);
 
-  // --- NEU: Formular-Änderungshandler ---
+  // Handle Input Changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  // --- NEU: Submit-Handler mit Validierung ---
+  // Handle Submit
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Pflichtfelder prüfen
+    // Check required fields
     if (!form.firstName || !form.lastName || !form.email || !form.message) {
       setFormError('Bitte füllen Sie alle Pflichtfelder aus.');
       setFormSuccess(null);
       return;
     }
-    // E-Mail-Validierung: Muss @ und einen Punkt enthalten
+    // E-Mail validation
     if (!/^\S+@\S+\.\S+$/.test(form.email)) {
       setFormError('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
       setFormSuccess(null);
@@ -57,7 +57,7 @@ export default function Home() {
     }
     setFormError(null);
 
-    // --- Formular an Formspree senden ---
+    // Send form data to Formspree
     try {
       const response = await fetch('https://formspree.io/f/mgvaqply', {
         method: 'POST',
@@ -353,7 +353,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="h-5 w-5 text-primary" />
-                    <p>info@umbau-allrounder.ch</p>
+                    <p><a href="mailto:info@umbau-allrounder.ch">info@umbau-allrounder.ch</a></p>
                   </div>
                 </CardContent>
               </Card>
@@ -431,13 +431,13 @@ export default function Home() {
                         onChange={handleInputChange}
                       />
                     </div>
-                    {/* --- NEU: Fehlernachricht --- */}
+                    {/* Error message */}
                     {formError && (
                       <div className="text-red-600 text-xs text-left mb-2">
                         {formError}
                       </div>
                     )}
-                    {/* --- NEU: Erfolgsmeldung --- */}
+                    {/* Success message */}
                     {formSuccess && (
                       <div className="text-green-600 text-xs text-left mb-2">
                         {formSuccess}
