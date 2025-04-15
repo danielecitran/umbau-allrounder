@@ -29,12 +29,6 @@ export default function Home() {
                 Über uns
               </Link>
               <Link
-                href="#testimonials"
-                className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-              >
-                Referenzen
-              </Link>
-              <Link
                 href="#contact"
                 className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
@@ -70,7 +64,7 @@ export default function Home() {
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Button asChild size="lg">
                     <Link href="#contact">
-                      Kostenlose Beratung
+                      Kontakt aufnehmen
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
@@ -108,8 +102,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <p>
-                    Wir übernehmen die komplette Koordination Ihres Bauprojekts, von der Planung bis zur Fertigstellung.
-                    Unsere erfahrenen Bauleiter sorgen für einen reibungslosen Ablauf und termingerechte Ausführung.
+                  Wir übernehmen die vollständige Koordination Ihres Bauprojekts – von der Planung bis zur Fertigstellung. Dabei sorgen wir für einen reibungslosen Ablauf und die termingerechte Ausführung aller Arbeiten.
                   </p>
                 </CardContent>
               </Card>
@@ -120,7 +113,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <p>
-                    Unsere Experten beraten Sie umfassend zu allen Aspekten Ihres Umbau- oder Renovationsprojekts. Wir
+                    Wir beraten Sie umfassend zu allen Aspekten Ihres Umbau- oder Renovationsprojekts. Wir
                     helfen Ihnen, die richtigen Materialien, Designs und Lösungen für Ihre Bedürfnisse zu finden.
                   </p>
                 </CardContent>
@@ -128,13 +121,11 @@ export default function Home() {
               <Card>
                 <CardHeader>
                   <CardTitle>Maurerarbeiten</CardTitle>
-                  <CardDescription>Solide Grundlagen für Ihr Projekt</CardDescription>
+                  <CardDescription>Stabile Ausführung – vom Fundament bis zum Feinschliff</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p>
-                    Von Fundamentarbeiten bis hin zu dekorativen Mauerwerken - unsere Maurer führen alle Arbeiten mit
-                    höchster Präzision und Qualität aus. Wir verwenden nur hochwertige Materialien für langlebige
-                    Ergebnisse.
+                  Wir übernehmen alle Maurerarbeiten sorgfältig und fachgerecht. Dabei legen wir Wert auf saubere Ausführung, langlebige Ergebnisse und den Einsatz solider Materialien – passend zum Umfang Ihres Bauprojekts.
                   </p>
                 </CardContent>
               </Card>
@@ -145,7 +136,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <p>
-                    Unsere Gipser sorgen für makellose Wand- und Deckenoberflächen. Ob Neugestaltung oder Reparatur -
+                    Wir sorgen für makellose Wand- und Deckenoberflächen. Ob Neugestaltung oder Reparatur -
                     wir garantieren ein erstklassiges Finish, das Ihre Räume in neuem Glanz erstrahlen lässt.
                   </p>
                 </CardContent>
@@ -170,7 +161,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <p>
-                    Unsere Spezialisten verlegen verschiedenste Bodenbeläge mit höchster Sorgfalt. Ob Parkett, Laminat,
+                    Wir verlegen verschiedenste Bodenbeläge mit höchster Sorgfalt. Ob Parkett, Laminat,
                     Fliesen oder Vinyl - wir sorgen für eine fachgerechte Installation und ein perfektes Ergebnis.
                   </p>
                 </CardContent>
@@ -183,17 +174,17 @@ export default function Home() {
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Über Umbau-Allrounder GmbH
+                  Über die Umbau-Allrounder GmbH
                 </h2>
                 <p className="text-muted-foreground md:text-xl">
-                  Seit unserer Gründung haben wir uns auf hochwertige Umbau- und Renovationsarbeiten in Zürich und
-                  Umgebung spezialisiert. Als Kleinunternehmen legen wir besonderen Wert auf persönlichen Kontakt und
+                  Seit unserer Gründung haben wir uns auf Umbau- und Renovationsarbeiten in Zürich und
+                  Umgebung spezialisiert. Wir legen besonderen Wert auf persönlichen Kontakt und
                   individuelle Betreuung unserer Kunden.
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-primary" />
-                    <p>Erfahrenes Team von Fachleuten</p>
+                    <p>Erfahrenes Team</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-primary" />
@@ -209,7 +200,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-primary" />
-                    <p>Lokales Unternehmen mit Kenntnis der regionalen Besonderheiten</p>
+                    <p>Lokales Unternehmen</p>
                   </div>
                 </div>
               </div>
@@ -225,69 +216,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-          <div className="w-full max-w-[1400px] mx-auto px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Was unsere Kunden sagen</h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl">
-                  Erfahren Sie, wie wir die Erwartungen unserer Kunden übertreffen und ihre Räume transformieren.
-                </p>
-              </div>
-            </div>
-            <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-2">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Familie Müller, Zürich</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="italic">
-                    "Die Umbau-Allrounder GmbH hat unsere Küche komplett renoviert und wir sind begeistert vom Ergebnis.
-                    Das Team war professionell, pünktlich und hat alle unsere Wünsche berücksichtigt. Wir können sie nur
-                    wärmstens empfehlen!"
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Café Sonnenschein, Zürich</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="italic">
-                    "Wir haben unser Café während der Betriebsferien renovieren lassen. Die Umbau-Allrounder haben nicht
-                    nur termingerecht gearbeitet, sondern auch qualitativ hochwertige Arbeit geleistet. Unsere Kunden
-                    sind begeistert vom neuen Look!"
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Herr Schmidt, Winterthur</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="italic">
-                    "Nach einem Wasserschaden musste mein Badezimmer komplett saniert werden. Die Umbau-Allrounder haben
-                    sich um alles gekümmert - von der Koordination mit der Versicherung bis zur perfekten Ausführung.
-                    Das neue Bad ist ein Traum!"
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Frau Weber, Zürich</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="italic">
-                    "Die Beratung war ausgezeichnet und hat mir geholfen, die richtigen Entscheidungen für meine
-                    Wohnungsrenovierung zu treffen. Das Team war freundlich, sauber und hat qualitativ hochwertige
-                    Arbeit geleistet. Ich bin rundum zufrieden!"
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-        <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
           <div className="w-full max-w-[1400px] mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -306,21 +235,15 @@ export default function Home() {
                 <CardContent className="space-y-4">
                   <div className="flex items-center gap-3">
                     <MapPin className="h-5 w-5 text-primary" />
-                    <p>Musterstrasse 123, 8000 Zürich, Schweiz</p>
+                    <p>Friedackerstrasse 37, 8050 Zürich, Schweiz</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="h-5 w-5 text-primary" />
-                    <p>+41 44 123 45 67</p>
+                    <p>+41 79 293 05 19</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="h-5 w-5 text-primary" />
-                    <p>info@umbau-allrounder.ch</p>
-                  </div>
-                  <div className="pt-4">
-                    <h3 className="font-medium mb-2">Öffnungszeiten:</h3>
-                    <p>Montag - Freitag: 08:00 - 17:00 Uhr</p>
-                    <p>Samstag: Nach Vereinbarung</p>
-                    <p>Sonntag: Geschlossen</p>
+                    <p>email@email.com</p>
                   </div>
                 </CardContent>
               </Card>
@@ -396,7 +319,6 @@ export default function Home() {
                       <textarea
                         id="message"
                         className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                        placeholder="Beschreiben Sie Ihr Projekt..."
                       />
                     </div>
                     <Button type="submit" className="w-full">
@@ -412,7 +334,7 @@ export default function Home() {
       <footer className="w-full border-t bg-background py-6">
         <div className="w-full max-w-[1400px] mx-auto px-4 flex flex-col items-center justify-between gap-4 md:flex-row md:px-6">
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-            {new Date().getFullYear()} Umbau-Allrounder GmbH. Alle Rechte vorbehalten.
+            {new Date().getFullYear()} Umbau-Allrounder GmbH
           </p>
           <div className="flex gap-4">
             <Link
