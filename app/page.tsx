@@ -45,7 +45,7 @@ export default function Home() {
     e.preventDefault();
     // Check required fields
     if (!form.firstName || !form.lastName || !form.email || !form.message) {
-      setFormError('Bitte füllen Sie alle Pflichtfelder aus.');
+      setFormError('Bitte füllen Sie alle erforderlichen Felder aus.');
       setFormSuccess(null);
       return;
     }
@@ -74,7 +74,7 @@ export default function Home() {
         }),
       });
       if (response.ok) {
-        setFormSuccess('Nachricht erfolgreich gesendet!');
+        setFormSuccess('Nachricht wurde erfolgreich übermittelt!');
         setForm({ firstName: '', lastName: '', email: '', message: '', phone: '' });
       } else {
         setFormError('Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.');
