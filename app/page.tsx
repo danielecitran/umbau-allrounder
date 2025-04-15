@@ -1,12 +1,26 @@
+"use client";
+
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, CheckCircle, Mail, MapPin, Phone } from "lucide-react"
+import { ArrowRight, CheckCircle, Mail, MapPin, Phone, HardHat, Brain, Hammer, Brush, Home as HomeIcon, Footprints } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { GradientText } from "@/components/ui/gradient-text"
 
 export default function Home() {
+  // Function to handle smooth scrolling
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -18,18 +32,21 @@ export default function Home() {
             <nav className="hidden gap-6 md:flex">
               <Link
                 href="#services"
+                onClick={(e) => handleScroll(e, 'services')}
                 className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 Dienstleistungen
               </Link>
               <Link
                 href="#about"
+                onClick={(e) => handleScroll(e, 'about')}
                 className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 Über uns
               </Link>
               <Link
                 href="#contact"
+                onClick={(e) => handleScroll(e, 'contact')}
                 className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 Kontakt
@@ -38,7 +55,7 @@ export default function Home() {
           </div>
           <div className="flex flex-1 items-center justify-end space-x-4">
             <Button asChild>
-              <Link href="#contact">Kontakt aufnehmen</Link>
+              <Link href="#contact" onClick={(e) => handleScroll(e, 'contact')}>Kontakt aufnehmen</Link>
             </Button>
           </div>
         </div>
@@ -63,13 +80,13 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Button asChild size="lg">
-                    <Link href="#contact">
+                    <Link href="#contact" onClick={(e) => handleScroll(e, 'contact')}>
                       Kontakt aufnehmen
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                   <Button variant="outline" size="lg" asChild>
-                    <Link href="#services">Unsere Dienstleistungen</Link>
+                    <Link href="#services" onClick={(e) => handleScroll(e, 'services')}>Unsere Dienstleistungen</Link>
                   </Button>
                 </div>
               </div>
@@ -95,72 +112,96 @@ export default function Home() {
               </div>
             </div>
             <div className="mx-auto grid gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
-              <Card>
+              <Card className="group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                 <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <HardHat className="h-6 w-6" />
+                  </div>
                   <CardTitle>Bauleitung</CardTitle>
                   <CardDescription>Professionelle Koordination Ihres Projekts</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p>
+                  <p className="text-muted-foreground">
                   Wir übernehmen die vollständige Koordination Ihres Bauprojekts – von der Planung bis zur Fertigstellung. Dabei sorgen wir für einen reibungslosen Ablauf und die termingerechte Ausführung aller Arbeiten.
                   </p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                 <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <Brain className="h-6 w-6" />
+                  </div>
                   <CardTitle>Beratung</CardTitle>
                   <CardDescription>Fachkundige Unterstützung bei Ihren Entscheidungen</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p>
+                  <p className="text-muted-foreground">
                     Wir beraten Sie umfassend zu allen Aspekten Ihres Umbau- oder Renovationsprojekts. Wir
                     helfen Ihnen, die richtigen Materialien, Designs und Lösungen für Ihre Bedürfnisse zu finden.
                   </p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                 <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <Hammer className="h-6 w-6" />
+                  </div>
                   <CardTitle>Maurerarbeiten</CardTitle>
                   <CardDescription>Stabile Ausführung – vom Fundament bis zum Feinschliff</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p>
+                  <p className="text-muted-foreground">
                   Wir übernehmen alle Maurerarbeiten sorgfältig und fachgerecht. Dabei legen wir Wert auf saubere Ausführung, langlebige Ergebnisse und den Einsatz solider Materialien – passend zum Umfang Ihres Bauprojekts.
                   </p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                 <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <Brush className="h-6 w-6" />
+                  </div>
                   <CardTitle>Gipserarbeiten</CardTitle>
                   <CardDescription>Perfekte Oberflächen für Ihre Räume</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p>
+                  <p className="text-muted-foreground">
                     Wir sorgen für makellose Wand- und Deckenoberflächen. Ob Neugestaltung oder Reparatur -
                     wir garantieren ein erstklassiges Finish, das Ihre Räume in neuem Glanz erstrahlen lässt.
                   </p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                 <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <HomeIcon className="h-6 w-6" />
+                  </div>
                   <CardTitle>Allgemeine Renovationen</CardTitle>
                   <CardDescription>Umfassende Erneuerung Ihrer Räumlichkeiten</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p>
+                  <p className="text-muted-foreground">
                     Wir bieten komplette Renovationslösungen für Wohn- und Geschäftsräume. Unser Team kümmert sich um
                     alle Aspekte der Erneuerung, vom Boden bis zur Decke, und verwandelt veraltete Räume in moderne
                     Wohlfühlorte.
                   </p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                 <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <Footprints className="h-6 w-6" />
+                  </div>
                   <CardTitle>Bodenverlegung</CardTitle>
                   <CardDescription>Hochwertige Böden für jeden Geschmack</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p>
+                  <p className="text-muted-foreground">
                     Wir verlegen verschiedenste Bodenbeläge mit höchster Sorgfalt. Ob Parkett, Laminat,
                     Fliesen oder Vinyl - wir sorgen für eine fachgerechte Installation und ein perfektes Ergebnis.
                   </p>
@@ -183,23 +224,23 @@ export default function Home() {
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
+                        <CheckCircle className="h-5 w-5 text-primary" />
                     <p>Erfahrenes Team</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
+                        <CheckCircle className="h-5 w-5 text-primary" />
                     <p>Qualitativ hochwertige Materialien und Ausführung</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
+                        <CheckCircle className="h-5 w-5 text-primary" />
                     <p>Termintreue und transparente Kommunikation</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
+                        <CheckCircle className="h-5 w-5 text-primary" />
                     <p>Umfassende Garantie auf alle Arbeiten</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
+                        <CheckCircle className="h-5 w-5 text-primary" />
                     <p>Lokales Unternehmen</p>
                   </div>
                 </div>
@@ -334,7 +375,7 @@ export default function Home() {
       <footer className="w-full border-t bg-background py-6">
         <div className="w-full max-w-[1400px] mx-auto px-4 flex flex-col items-center justify-between gap-4 md:flex-row md:px-6">
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-            {new Date().getFullYear()} Umbau-Allrounder GmbH
+          &copy; {new Date().getFullYear()} Umbau-Allrounder GmbH
           </p>
           <div className="flex gap-4">
             <Link
@@ -342,18 +383,6 @@ export default function Home() {
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               Impressum
-            </Link>
-            <Link
-              href="#"
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Datenschutz
-            </Link>
-            <Link
-              href="#"
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              AGB
             </Link>
           </div>
         </div>

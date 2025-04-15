@@ -2,7 +2,9 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
-function Card({ className, ...props }: React.ComponentProps<"div">) {
+interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+function Card({ className, ...props }: CardProps) {
   return (
     <div
       data-slot="card"
