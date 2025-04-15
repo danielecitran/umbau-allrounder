@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { GradientText } from "@/components/ui/gradient-text"
 
+import React, { useState } from "react";
+
 export default function Home() {
   // Function to handle smooth scrolling
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
@@ -18,6 +20,69 @@ export default function Home() {
         behavior: 'smooth',
         block: 'start'
       });
+    }
+  };
+
+  // --- NEU: Formular-States und Fehlerhandling ---
+  const [form, setForm] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: '',
+    phone: ''
+  });
+  const [formError, setFormError] = useState<string | null>(null);
+  const [formSuccess, setFormSuccess] = useState<string | null>(null);
+
+  // --- NEU: Formular-Änderungshandler ---
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // --- NEU: Submit-Handler mit Validierung ---
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    // Pflichtfelder prüfen
+    if (!form.firstName || !form.lastName || !form.email || !form.message) {
+      setFormError('Bitte füllen Sie alle Pflichtfelder aus.');
+      setFormSuccess(null);
+      return;
+    }
+    // E-Mail-Validierung: Muss @ und einen Punkt enthalten
+    if (!/^\S+@\S+\.\S+$/.test(form.email)) {
+      setFormError('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
+      setFormSuccess(null);
+      return;
+    }
+    setFormError(null);
+
+    // --- Formular an Formspree senden ---
+    try {
+      const response = await fetch('https://formspree.io/f/mgvaqply', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          'Vorname': form.firstName,
+          'Nachname': form.lastName,
+          'E-Mail': form.email,
+          'Telefon': form.phone || '',
+          'Nachricht': form.message,
+        }),
+      });
+      if (response.ok) {
+        setFormSuccess('Nachricht erfolgreich gesendet!');
+        setForm({ firstName: '', lastName: '', email: '', message: '', phone: '' });
+      } else {
+        setFormError('Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.');
+        setFormSuccess(null);
+      }
+    } catch (error) {
+      setFormError('Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.');
+      setFormSuccess(null);
     }
   };
 
@@ -288,7 +353,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="h-5 w-5 text-primary" />
-                    <p>email@email.com</p>
+                    <p>info@umbau-allrounder.ch</p>
                   </div>
                 </CardContent>
               </Card>
@@ -297,60 +362,51 @@ export default function Home() {
                   <CardTitle>Schreiben Sie uns</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <form action="https://formspree.io/f/mgvaqply" method="POST" className="space-y-4">
-                    <div className="grid grid-cols-2 gap-4">
+                  <form className="space-y-6" onSubmit={handleSubmit}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <label
-                          htmlFor="first-name"
-                          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                        >
+                        <label htmlFor="first-name" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                           Vorname <span className="text-red-500">*</span>
                         </label>
                         <input
                           id="first-name"
-                          name="first-name"
+                          name="firstName"
                           className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                           placeholder="Max"
-                          required
+                          value={form.firstName}
+                          onChange={handleInputChange}
                         />
                       </div>
                       <div className="space-y-2">
-                        <label
-                          htmlFor="last-name"
-                          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                        >
+                        <label htmlFor="last-name" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                           Nachname <span className="text-red-500">*</span>
                         </label>
                         <input
                           id="last-name"
-                          name="last-name"
+                          name="lastName"
                           className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                           placeholder="Muster"
-                          required
+                          value={form.lastName}
+                          onChange={handleInputChange}
                         />
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <label
-                        htmlFor="email"
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      >
+                      <label htmlFor="email" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                         E-Mail <span className="text-red-500">*</span>
                       </label>
                       <input
                         id="email"
-                        type="email"
+                        type="text"
                         name="email"
                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         placeholder="max.muster@example.com"
-                        required
+                        value={form.email}
+                        onChange={handleInputChange}
                       />
                     </div>
                     <div className="space-y-2">
-                      <label
-                        htmlFor="phone"
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      >
+                      <label htmlFor="phone" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                         Telefon <span className="text-xs text-muted-foreground">(optional)</span>
                       </label>
                       <input
@@ -359,22 +415,34 @@ export default function Home() {
                         name="phone"
                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         placeholder="+41 79 123 45 67"
+                        value={form.phone}
+                        onChange={handleInputChange}
                       />
                     </div>
                     <div className="space-y-2">
-                      <label
-                        htmlFor="message"
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      >
+                      <label htmlFor="message" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                         Nachricht <span className="text-red-500">*</span>
                       </label>
                       <textarea
                         id="message"
                         name="message"
                         className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                        required
+                        value={form.message}
+                        onChange={handleInputChange}
                       />
                     </div>
+                    {/* --- NEU: Fehlernachricht --- */}
+                    {formError && (
+                      <div className="text-red-600 text-xs text-left mb-2">
+                        {formError}
+                      </div>
+                    )}
+                    {/* --- NEU: Erfolgsmeldung --- */}
+                    {formSuccess && (
+                      <div className="text-green-600 text-xs text-left mb-2">
+                        {formSuccess}
+                      </div>
+                    )}
                     <Button type="submit" className="w-full">
                       Nachricht senden
                     </Button>
