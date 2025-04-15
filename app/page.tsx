@@ -297,19 +297,21 @@ export default function Home() {
                   <CardTitle>Schreiben Sie uns</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <form className="space-y-4">
+                  <form action="https://formspree.io/f/mgvaqply" method="POST" className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <label
                           htmlFor="first-name"
                           className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                         >
-                          Vorname
+                          Vorname <span className="text-red-500">*</span>
                         </label>
                         <input
                           id="first-name"
+                          name="first-name"
                           className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                           placeholder="Max"
+                          required
                         />
                       </div>
                       <div className="space-y-2">
@@ -317,12 +319,14 @@ export default function Home() {
                           htmlFor="last-name"
                           className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                         >
-                          Nachname
+                          Nachname <span className="text-red-500">*</span>
                         </label>
                         <input
                           id="last-name"
+                          name="last-name"
                           className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                           placeholder="Muster"
+                          required
                         />
                       </div>
                     </div>
@@ -331,13 +335,15 @@ export default function Home() {
                         htmlFor="email"
                         className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                       >
-                        E-Mail
+                        E-Mail <span className="text-red-500">*</span>
                       </label>
                       <input
                         id="email"
                         type="email"
+                        name="email"
                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         placeholder="max.muster@example.com"
+                        required
                       />
                     </div>
                     <div className="space-y-2">
@@ -345,11 +351,12 @@ export default function Home() {
                         htmlFor="phone"
                         className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                       >
-                        Telefon
+                        Telefon <span className="text-xs text-muted-foreground">(optional)</span>
                       </label>
                       <input
                         id="phone"
                         type="tel"
+                        name="phone"
                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         placeholder="+41 79 123 45 67"
                       />
@@ -359,11 +366,13 @@ export default function Home() {
                         htmlFor="message"
                         className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                       >
-                        Nachricht
+                        Nachricht <span className="text-red-500">*</span>
                       </label>
                       <textarea
                         id="message"
+                        name="message"
                         className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        required
                       />
                     </div>
                     <Button type="submit" className="w-full">
