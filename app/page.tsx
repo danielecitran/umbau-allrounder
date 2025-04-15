@@ -379,7 +379,7 @@ export default function Home() {
           </p>
           <div className="flex gap-4">
             <Link
-              href="#"
+              href="/impressum"
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               Impressum
