@@ -274,9 +274,13 @@ export default function Home() {
                   <CardTitle>Kontaktinformationen</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <MapPin className="h-5 w-5 text-primary" />
-                    <p>Friedackerstrasse 37, 8050 Zürich, Schweiz</p>
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center gap-3">
+                      <MapPin className="h-5 w-5 text-primary" />
+                      <p>Friedackerstrasse 37</p>
+                    </div>
+                    <p className="pl-8">8050 Zürich</p>
+                    <p className="pl-8">Schweiz</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="h-5 w-5 text-primary" />
