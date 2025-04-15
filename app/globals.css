@@ -130,6 +130,35 @@
   --brand: hsl(50 100% 50%);
 }
 
+@keyframes gradient-border {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(10%, -10%); }
+  50% { transform: translate(0, -20%); }
+  75% { transform: translate(-10%, -10%); }
+}
+
+@keyframes gradient-1 {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes gradient-2 {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes gradient-3 {
+  0%, 100% { opacity: 0.3; }
+  25% { opacity: 1; }
+  75% { opacity: 0.3; }
+}
+
+@keyframes gradient-4 {
+  0%, 100% { opacity: 0.3; }
+  33% { opacity: 1; }
+  66% { opacity: 0.3; }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle, Mail, MapPin, Phone } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { GradientText } from "@/components/ui/gradient-text"
 
 export default function Home() {
   return (
@@ -55,7 +56,11 @@ export default function Home() {
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                    Ihr Partner für hochwertige Umbauten und Renovationen
+                    Ihr Partner für{" "}
+                    <GradientText>
+                      hochwertige
+                    </GradientText>{" "}
+                    Umbauten und Renovationen
                   </h1>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
                     Wir verwandeln Ihre Räume mit Fachkompetenz und Leidenschaft. Von der Beratung bis zur
@@ -407,7 +412,7 @@ export default function Home() {
       <footer className="w-full border-t bg-background py-6">
         <div className="w-full max-w-[1400px] mx-auto px-4 flex flex-col items-center justify-between gap-4 md:flex-row md:px-6">
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-            © {new Date().getFullYear()} Umbau-Allrounder GmbH. Alle Rechte vorbehalten.
+            {new Date().getFullYear()} Umbau-Allrounder GmbH. Alle Rechte vorbehalten.
           </p>
           <div className="flex gap-4">
             <Link
