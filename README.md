@@ -63,4 +63,4 @@ npm run dev
 Für Fragen oder Feedback zum Projekt können Sie mich gerne kontaktieren:
 
 - GitHub: https://github.com/danielecitran
-- E-Mail: mailto:daniele.ctr.zh@icloud.com
+- E-Mail: daniele.ctr.zh@icloud.com
