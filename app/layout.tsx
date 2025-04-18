@@ -53,15 +53,17 @@ export const metadata = {
     apple: [
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
-    other: [
-      {
-        rel: "mask-icon",
-        url: "/logos/LOGO-Transparent.png",
-        color: "#000000",
-      },
-    ],
   },
   manifest: "/manifest.json",
+  images: [
+    {
+      url: "https://umbau-allrounder.ch/logos/LOGO-wTBlack.png",
+      width: 800,
+      height: 200,
+      alt: "Umbau-Allrounder GmbH Logo",
+      type: "image/png",
+    },
+  ],
   openGraph: {
     type: "website",
     url: "https://umbau-allrounder.ch",

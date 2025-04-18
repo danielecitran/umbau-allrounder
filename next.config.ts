@@ -8,6 +8,8 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "umbau-allrounder.ch",
+        port: "",
+        pathname: "/logos/**",
       },
     ],
   },
