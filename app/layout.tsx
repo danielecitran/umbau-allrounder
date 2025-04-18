@@ -13,13 +13,24 @@ export const viewport = {
 };
 
 export const metadata = {
+  metadataBase: new URL("https://umbau-allrounder.ch"),
   title:
     "Umbau-Allrounder GmbH - Ihr Partner für hochwertige Umbauten und Renovationen",
   description:
     "Professionelle Umbau- und Renovationsarbeiten in Zürich und Umgebung. Wir verwandeln Ihre Räume mit Fachkompetenz und Leidenschaft.",
   keywords:
     "Umbau, Renovation, Sanierung, Zürich, Bauunternehmen, Umbau-Allrounder, Allrounder, Allroundservice, Maurerarbeiten, Gipserarbeiten, Bodenverlegung, Modernisierung, Renovationsarbeiten, Umbauarbeiten, Bauleitung",
-  robots: "index, follow",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   generator: "Next.js",
   applicationName: "Umbau-Allrounder GmbH",
   referrer: "origin-when-cross-origin",
@@ -32,15 +43,32 @@ export const metadata = {
     telephone: false,
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: [{ url: "/apple-touch-icon.png" }],
+    icon: [
+      { url: "/favicon.ico", sizes: "any", type: "image/x-icon" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: ["/favicon.ico"],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      {
+        rel: "mask-icon",
+        url: "/logos/LOGO-Transparent.png",
+        color: "#000000",
+      },
+    ],
   },
+  manifest: "/manifest.json",
   openGraph: {
+    type: "website",
+    url: "https://umbau-allrounder.ch",
     title:
       "Umbau-Allrounder GmbH - Ihr Partner für hochwertige Umbauten und Renovationen",
     description:
       "Professionelle Umbau- und Renovationsarbeiten in Zürich und Umgebung. Wir verwandeln Ihre Räume mit Fachkompetenz und Leidenschaft.",
-    url: "https://umbau-allrounder.ch",
     siteName: "Umbau-Allrounder GmbH",
     images: [
       {
@@ -52,7 +80,6 @@ export const metadata = {
       },
     ],
     locale: "de_CH",
-    type: "website",
     countryName: "Switzerland",
     phoneNumbers: ["+41 79 293 05 19"],
     emails: ["info@umbau-allrounder.ch"],

@@ -279,7 +279,7 @@ export default function Home() {
                   </div>
                   <CardTitle>Maurerarbeiten</CardTitle>
                   <CardDescription>
-                    Stabile Ausführung – vom Fundament bis zum Feinschliff
+                    Ausführung vom Fundament bis zum Feinschliff
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
