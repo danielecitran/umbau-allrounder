@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   ArrowRight,
-  CheckCircle,
   Mail,
   MapPin,
   Phone,
@@ -14,6 +13,10 @@ import {
   Brush,
   Home as HomeIcon,
   Footprints,
+  Clock,
+  Users,
+  ShieldCheck,
+  Check,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -231,8 +234,7 @@ export default function Home() {
               </div>
             </div>
             <div className="mx-auto grid gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
-              <Card className="group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <Card className="group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg backdrop-blur-sm bg-white/30 dark:bg-gray-800/30 border-none shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.12)] before:absolute before:inset-0 before:z-0 before:bg-gradient-to-b before:from-white/5 before:to-white/20 before:rounded-xl before:opacity-0 before:transition-opacity before:duration-300 group-hover:before:opacity-100">
                 <CardHeader>
                   <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     <HardHat className="h-6 w-6" />
@@ -251,8 +253,7 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <Card className="group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg backdrop-blur-sm bg-white/30 dark:bg-gray-800/30 border-none shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.12)] before:absolute before:inset-0 before:z-0 before:bg-gradient-to-b before:from-white/5 before:to-white/20 before:rounded-xl before:opacity-0 before:transition-opacity before:duration-300 group-hover:before:opacity-100">
                 <CardHeader>
                   <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     <Brain className="h-6 w-6" />
@@ -271,8 +272,7 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <Card className="group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg backdrop-blur-sm bg-white/30 dark:bg-gray-800/30 border-none shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.12)] before:absolute before:inset-0 before:z-0 before:bg-gradient-to-b before:from-white/5 before:to-white/20 before:rounded-xl before:opacity-0 before:transition-opacity before:duration-300 group-hover:before:opacity-100">
                 <CardHeader>
                   <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     <Hammer className="h-6 w-6" />
@@ -291,8 +291,7 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <Card className="group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg backdrop-blur-sm bg-white/30 dark:bg-gray-800/30 border-none shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.12)] before:absolute before:inset-0 before:z-0 before:bg-gradient-to-b before:from-white/5 before:to-white/20 before:rounded-xl before:opacity-0 before:transition-opacity before:duration-300 group-hover:before:opacity-100">
                 <CardHeader>
                   <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     <Brush className="h-6 w-6" />
@@ -311,8 +310,7 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <Card className="group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg backdrop-blur-sm bg-white/30 dark:bg-gray-800/30 border-none shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.12)] before:absolute before:inset-0 before:z-0 before:bg-gradient-to-b before:from-white/5 before:to-white/20 before:rounded-xl before:opacity-0 before:transition-opacity before:duration-300 group-hover:before:opacity-100">
                 <CardHeader>
                   <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     <HomeIcon className="h-6 w-6" />
@@ -331,8 +329,7 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <Card className="group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg backdrop-blur-sm bg-white/30 dark:bg-gray-800/30 border-none shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.12)] before:absolute before:inset-0 before:z-0 before:bg-gradient-to-b before:from-white/5 before:to-white/20 before:rounded-xl before:opacity-0 before:transition-opacity before:duration-300 group-hover:before:opacity-100">
                 <CardHeader>
                   <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     <Footprints className="h-6 w-6" />
@@ -367,26 +364,50 @@ export default function Home() {
                   legen besonderen Wert auf persönlichen Kontakt und
                   individuelle Betreuung unserer Kunden.
                 </p>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <p>Erfahrenes Team</p>
+                <div className="mt-6 space-y-3">
+                  <div className="flex items-center gap-3">
+                    <div className="relative">
+                      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
+                        <Users className="h-3.5 w-3.5 text-primary" />
+                      </div>
+                      <div className="absolute -right-0.5 -top-0.5 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-primary">
+                        <Check className="h-2.5 w-2.5 text-white" />
+                      </div>
+                    </div>
+                    <p className="text-base">Erfahrenes Team</p>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <p>Qualitativ hochwertige Materialien und Ausführung</p>
+                  <div className="flex items-center gap-3">
+                    <div className="relative">
+                      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
+                        <Clock className="h-3.5 w-3.5 text-primary" />
+                      </div>
+                      <div className="absolute -right-0.5 -top-0.5 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-primary">
+                        <Check className="h-2.5 w-2.5 text-white" />
+                      </div>
+                    </div>
+                    <p className="text-base">Termintreue und transparente Kommunikation</p>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <p>Termintreue und transparente Kommunikation</p>
+                  <div className="flex items-center gap-3">
+                    <div className="relative">
+                      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
+                        <ShieldCheck className="h-3.5 w-3.5 text-primary" />
+                      </div>
+                      <div className="absolute -right-0.5 -top-0.5 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-primary">
+                        <Check className="h-2.5 w-2.5 text-white" />
+                      </div>
+                    </div>
+                    <p className="text-base">Garantie auf alle Arbeiten</p>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <p>Umfassende Garantie auf alle Arbeiten</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <p>Lokales Unternehmen</p>
+                  <div className="flex items-center gap-3">
+                    <div className="relative">
+                      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
+                        <MapPin className="h-3.5 w-3.5 text-primary" />
+                      </div>
+                      <div className="absolute -right-0.5 -top-0.5 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-primary">
+                        <Check className="h-2.5 w-2.5 text-white" />
+                      </div>
+                    </div>
+                    <p className="text-base">Lokales Unternehmen</p>
                   </div>
                 </div>
               </div>
@@ -419,7 +440,7 @@ export default function Home() {
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-2">
-              <Card>
+              <Card className="backdrop-blur-sm bg-white/30 dark:bg-gray-800/30 border-none shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.12)] relative overflow-hidden before:absolute before:inset-0 before:z-0 before:bg-gradient-to-b before:from-white/5 before:to-white/20 before:rounded-xl">
                 <CardHeader>
                   <CardTitle>Kontaktinformationen</CardTitle>
                 </CardHeader>
@@ -446,7 +467,7 @@ export default function Home() {
                   </div>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="backdrop-blur-sm bg-white/30 dark:bg-gray-800/30 border-none shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.12)] relative overflow-hidden before:absolute before:inset-0 before:z-0 before:bg-gradient-to-b before:from-white/5 before:to-white/20 before:rounded-xl">
                 <CardHeader>
                   <CardTitle>Schreiben Sie uns</CardTitle>
                 </CardHeader>
@@ -463,7 +484,7 @@ export default function Home() {
                         <input
                           id="first-name"
                           name="firstName"
-                          className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="relative z-10 flex h-10 w-full rounded-md border border-input bg-background/50 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 backdrop-blur-sm"
                           placeholder="Max"
                           value={form.firstName}
                           onChange={handleInputChange}
@@ -479,7 +500,7 @@ export default function Home() {
                         <input
                           id="last-name"
                           name="lastName"
-                          className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="relative z-10 flex h-10 w-full rounded-md border border-input bg-background/50 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 backdrop-blur-sm"
                           placeholder="Muster"
                           value={form.lastName}
                           onChange={handleInputChange}
@@ -497,7 +518,7 @@ export default function Home() {
                         id="email"
                         type="text"
                         name="email"
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="relative z-10 flex h-10 w-full rounded-md border border-input bg-background/50 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 backdrop-blur-sm"
                         placeholder="max.muster@example.com"
                         value={form.email}
                         onChange={handleInputChange}
@@ -517,7 +538,7 @@ export default function Home() {
                         id="phone"
                         type="tel"
                         name="phone"
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="relative z-10 flex h-10 w-full rounded-md border border-input bg-background/50 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 backdrop-blur-sm"
                         placeholder="+41 79 123 45 67"
                         value={form.phone}
                         onChange={handleInputChange}
@@ -533,7 +554,7 @@ export default function Home() {
                       <textarea
                         id="message"
                         name="message"
-                        className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="relative z-10 flex min-h-[120px] w-full rounded-md border border-input bg-background/50 px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 backdrop-blur-sm"
                         value={form.message}
                         onChange={handleInputChange}
                       />
