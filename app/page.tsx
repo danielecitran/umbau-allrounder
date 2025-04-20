@@ -573,7 +573,7 @@ export default function Home() {
                     )}
                     <Button
                       type="submit"
-                      className="w-full"
+                      className="relative z-20 w-full"
                       disabled={isLoading}
                     >
                       {isLoading ? (
