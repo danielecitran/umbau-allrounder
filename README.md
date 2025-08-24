@@ -9,34 +9,28 @@ Die Webseite ist erreichbar unter:
 
 ## Über das Projekt
 
-Die Webseite ist eine Home Page für die Firma Umbau-Allrounder GmbH. Diese präsentiert die Leistungen des Unternehmens und ermöglicht eine einfache Kontaktaufnahme.
+Die Webseite ist eine Homepage für die Firma Umbau-Allrounder GmbH. Diese präsentiert die Leistungen des Unternehmens und ermöglicht eine einfache Kontaktaufnahme.
 
 ## Features
 
 - Modernes, responsive Webdesign
 - Übersichtliche Präsentation der Dienstleistungen
 - Kontaktformular für Anfragen
-- SEO-optimierte Meta-Daten für bessere Sichtbarkeit in Suchmaschinen
-- Optimierte Performance und Ladezeiten
-- Barrierefreie Gestaltung
+- SEO-optimierte Metadaten für bessere Sichtbarkeit in Suchmaschinen
 
 ## Technische Details
 
 - **Frontend**: React mit TypeScript
-- **Styling**: Tailwind CSS für modernes, responsive Design
+- **Styling**: Tailwind CSS
 - **SEO-Optimierung**:
-  - Dynamische Meta-Tags für jede Seite
+  - Dynamische Metatags für jede Seite
   - Strukturierte Daten (Schema.org)
   - Optimierte Titel und Beschreibungen
   - Sitemap.xml für bessere Indexierung
-- **Performance**:
-  - Lazy Loading von Bildern
-  - Optimierte Asset-Delivery
-  - Minimierte CSS/JS Dateien
 
 ## SEO-Features
 
-- Dynamische Meta-Tags für jede Seite
+- Dynamische Metatags für jede Seite
 - Open Graph Tags für Social Media Sharing
 - Twitter Card Integration
 - Robots.txt Konfiguration
